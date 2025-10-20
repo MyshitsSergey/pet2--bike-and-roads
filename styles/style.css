@@ -78,6 +78,7 @@ ol {
 }
 
 .about__bike-description {
+  color: rgba(34, 34, 34, 1);
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
@@ -86,6 +87,7 @@ ol {
   padding-bottom: 50px;
   padding-left: 120px;
   padding-right: 35px;
+  opacity: 0.7;
 }
 
 .about__button {
@@ -111,9 +113,6 @@ ol {
   padding-left: 120px;
   margin-top: 167px;
 }
-
-
-
 
 .about__img {
   position: relative;
@@ -182,4 +181,263 @@ ol {
   line-height: 28px;
   text-align: left;
   opacity: 0.7;
+}
+
+.info__roads-name {
+  color: rgba(21, 21, 21, 1);
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -0.5px;
+  text-align: left;
+  padding-top: 60px;
+  padding-left: 120px;
+}
+
+.info__roads-text {
+  color: rgba(34, 34, 34, 1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  opacity: 0.7;
+  padding-left: 120px;
+  padding-top: 60px;
+  padding-right: 860px;
+}
+
+.info__roads-img {
+  padding-left: 120px;
+  padding-top: 80px;
+}
+
+.info__roads-buttons {
+  padding-left: 120px;
+  padding-top: 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.info__roads-buttons-left {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background: rgba(235, 235, 235, 1);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info__roads-buttons-right {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background: rgba(235, 235, 235, 1);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info__roads-buttons-left_simvol {
+  width: 7px;
+  height: 16px;
+}
+
+.info__roads-buttons-right_simvol {
+  width: 7px;
+  height: 16px;
+}
+
+
+
+.info__bikes-name {
+  padding-left:  120px;
+  padding-top: 60px;
+  color: rgba(21, 21, 21, 1);
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.info__bikes-roads_menu {
+  display: flex;
+  gap: 40px;
+  padding-left: 1080px;
+  color: rgba(21, 21, 21, 1);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: right;
+}
+
+.info__bikes-roads_iteam-links {
+  text-decoration: none;
+}
+
+.info__bikes-bikes {
+  display: grid;
+  gap: 30px;
+  padding-top: 53.81px;
+  padding-left: 120px;
+  padding-right: 120px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+.info__workout {
+  display: flex;
+}
+
+.info__workout-name {
+  padding-left: 120px;
+  padding-top: 150px;
+  color: rgba(21, 21, 21, 1);
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.info__workout-description {
+  color: rgba(34, 34, 34, 1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  opacity: 0.7;
+  padding-top: 50px;
+  padding-left: 120px;
+  padding-right: 160px;
+}
+
+.info__workout-menu {
+  display: flex;
+  padding-left: 120px;
+  padding-top: 180px;
+  padding-bottom: 120px;
+  gap: 30px;
+}
+
+.info__workout-menu_iteam {
+  color: rgba(21, 21, 21, 1);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+}
+
+.info__workout-menu_iteam-links {
+  text-decoration: none;
+}
+
+.info__bikes-bikes_iteam {
+  border-radius: 20px;
+  box-shadow: -20px 60px 220px 0px rgba(0, 0, 0, 0.44);
+  background: rgba(244, 244, 244, 1);
+  width: 380px;
+  height: 380px;
+}
+
+.info__bikes-bikes_iteam-img {
+  border-radius: 20px;
+  width: 340px;
+  height: 340px;
+  padding: 20px;
+}
+
+.info__bikes-bikes_iteam-link-text {
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+
+
+
+
+
+
+.info__bikes-bikes_iteam-text {
+  color: rgba(21, 21, 21, 1);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+  padding-top: 50px;
+}
+
+.info__workout-img {
+  padding-top: 150px;
+  padding-right: 120px;
+}
+
+
+.footer {
+  background: rgba(239, 239, 239, 1);
+  height: 424px;
+}
+
+.footer__text-name {
+  color: rgba(21, 21, 21, 1);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  padding-left: 120px;
+  padding-top: 50px;
+}
+
+.footer__label-inputs {
+  padding-top: 50px;
+  padding-left: 120px;
+}
+
+.footer__label {
+}
+
+.footer__input {
+  background: transparent;
+  box-sizing: border-box;
+  border: 1px solid rgba(199, 199, 199, 0.5);
+  border-radius: 4px;
+  width: 360px;
+  height: 50px;
+}
+
+.footer__down {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-top: 100px;
+}
+
+.footer__switch {
+  padding-right: 122.65px;
+}
+
+.footer__switch-menu {
+  display: flex;
+  gap: 22px;
+}
+
+.footer-switcher {
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 1);
+  width: 44px;
+  height: 24px;
+}
+
+.footer__company {
+  color: rgba(207, 207, 207, 1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.59px;
+  text-align: left;
+  padding-left: 120px;
+  padding-top: 100px;
 }

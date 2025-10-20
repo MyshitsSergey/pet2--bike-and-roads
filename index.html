@@ -25,7 +25,6 @@
       </ul>
     </nav>
   </header>
-
   <main>
     <section class="about__bike">
       <div class="about__text">
@@ -47,13 +46,6 @@
             </div>
       </div>
     </section>
-
-  
-
-    
-
-
-
     <section class="info__words">
       <img class="info__words-img" src="./images/Placeholder2.jpg" alt="Природа">
       <div class="info__words-text">
@@ -72,42 +64,112 @@
 
 
     <section class="info__roads">
-      <h2>Шоссе</h2>
-      <p>На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь то горы или равнины. Гонки проходят в командном пелотоне, но тренироваться можно и самостоятельно.</p>
-      <div>
+      <h2 class="info__roads-name">Шоссе</h2>
+      <div class="info__roads-text">
+        <p>На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь то горы или равнины. Гонки проходят в командном пелотоне, но тренироваться можно и самостоятельно.</p>
+      </div>
+      <div class="info__roads-img">
         <img src="./images/Placeholder3.jpg" alt="Горная дорога">
         <img src="./images/Placeholder3.1.jpg" alt="Лесная дорога">
       </div>
-        <button>стрелка в лево</button>
-        <button>стрелка в право</button>
+      <div class="info__roads-buttons">
+        <button class="info__roads-buttons-left">
+          <img class="info__roads-buttons-left_simvol" src="./images/strelka-left.svg" alt="Стрелка в лево">
+        </button>
+        <button class="info__roads-buttons-right">
+          <img class="info__roads-buttons-left_simvol" src="./images/strelka-right.svg" alt="Стрелка в лево">
+        </button>
+      </div>
     </section>
 
 
 
 
     <section class="info__bikes">
-      <h2>Велосипеды</h2>
-      <ul>
-        <li>Шоссе</li>
-        <li>Гравел</li>
-        <li>ТТ</li>
+      <h2 class="info__bikes-name">Велосипеды</h2>
+      <ul class="info__bikes-roads_menu">
+        <li class="info__bikes-roads_iteam">
+          <a class="info__bikes-roads_iteam-links" href="">Шоссе</a>
+        </li>
+        <li class="info__bikes-roads_iteam">
+          <a class="info__bikes-roads_iteam-links" href="">Гравел</a>
+        </li>
+        <li class="info__bikes-roads_iteam">
+          <a class="info__bikes-roads_iteam-links" href="">ТТ</a>
+        </li>
       </ul>
-      <ul>
-        <li><img src="./images/Снимок экрана 2021-05-24 в 12.58 (1).png" alt=""></li>
-        <li><img src="./images/Снимок экрана 2021-05-24 в 12.58.png" alt=""></li>
-        <li><img src="./images/Снимок экрана 2021-05-24 в 12.59.png" alt=""></li>
+      <ul class="info__bikes-bikes">
+        <li class="info__bikes-bikes_iteam">
+          <div class="info__bikes-bikes_iteam-link-img">
+            <a class="info__bikes-bikes_iteam-link" href="">
+            <img class="info__bikes-bikes_iteam-img" src="./images/Снимок экрана 2021-05-24 в 12.58 (1).png" alt=""></a>
+          </div>
+          <div class="info__bikes-bikes_iteam-link-text">
+            <a class="info__bikes-bikes_iteam-link" href="">
+              <p class="info__bikes-bikes_iteam-text">Cervelo Caledonia-5</p>
+            </a>
+          </div>          
+        </li>
+        <li class="info__bikes-bikes_iteam">
+          <img class="info__bikes-bikes_iteam-img" src="./images/Снимок экрана 2021-05-24 в 12.58.png" alt="">
+        </li>
+        <li class="info__bikes-bikes_iteam">
+          <img class="info__bikes-bikes_iteam-img" src="./images/Снимок экрана 2021-05-24 в 12.59.png" alt="">
+        </li>
       </ul>
     </section>
+
+
     <section class="info__workout">
-      <h2>Тренировки</h2>
-      <p>Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать эти тренировки поможет приложение Strava, а также это приложение позволит построить тренировочный план.</p>
-      <ul>
-        <li><a href="">Strava</a></li>
-        <li><a href="">Komoot</a></li>
+      <div class="info__workout-text">
+      <h2 class="info__workout-name">Тренировки</h2>
+        <div class="info__workout-description">
+          <p>Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать эти тренировки поможет приложение Strava, а также это приложение позволит построить тренировочный план.</p>
+        </div>
+        <ul class="info__workout-menu">
+        <li class="info__workout-menu_iteam">
+          <a class="info__workout-menu_iteam-links" href="">Strava</a>
+        </li>
+        <li class="info__workout-menu_iteam">
+          <a class="info__workout-menu_iteam-links" href="">Komoot</a>
+        </li>
       </ul>
+      </div>
+      
+      <div class="info__workout-img">
+        <img src="./images/Placeholder (1) trenirovka.jpg" alt=" Асфальтированная дорога среди деревьев">
+      </div>
     </section>
   </main>
 
-  <footer class="footeer"></footer>
+  <footer class="footer">
+    <div class="footer__text">
+      <h3 class="footer__text-name">Подпишитесь на рассылку —</h3>
+      <div class="footer__label-inputs">
+        <label class="footer__label" for="email">
+        <input class="footer__input" type="email" id="email" placeholder="Введите e-mail">
+        </label>
+      </div>
+
+    </div>
+    <div class="footer__down">
+      <div class="footer__name-company">
+        <p class="footer__company">© Road Club 2021</p>
+      </div>
+      <div class="footer__switch">
+        <ul class="footer__switch-menu">
+         <li class="footer__switch-menu_iteam">
+            <img src="./images/sun.svg" alt="">
+         </li>
+         <li class="footer__switch-menu_iteam">
+            <div class="footer-switcher"></div>
+          </li>
+          <li class="footer__switch-menu_iteam">
+            <img src="./images/luna.svg" alt="">
+          </li>
+          </ul>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
