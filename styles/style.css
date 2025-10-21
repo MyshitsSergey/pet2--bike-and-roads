@@ -232,7 +232,9 @@ ol {
 }
 */
 
-
+.nav-button.hidden {
+  display: none;
+}
 
 .info__roads-buttons {
   padding-left: 120px;
@@ -274,6 +276,9 @@ ol {
 }
 
 
+.info__bikes {
+  display: grid;
+}
 
 .info__bikes-name {
   padding-left:  120px;
@@ -383,7 +388,6 @@ ol {
   font-weight: 600;
   line-height: 22px;
   text-align: left;
-  
   text-decoration: none;
 }
 .info__bikes-bikes_iteam-text {

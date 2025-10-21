@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .slider-container {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Скрываем радио-кнопки */
+        .slide-radio {
+            display: none;
+        }
+        
+        /* Слайды */
+        .slide {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Активный слайд */
+        #slide1:checked ~ .slider .slide1,
+        #slide2:checked ~ .slider .slide2,
+        #slide3:checked ~ .slider .slide3,
+        #slide4:checked ~ .slider .slide4 {
+            display: block;
+        }
+        
+        .slide-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .slide-title {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .slide-description {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .images-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .image-box {
+            width: 350px;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Навигация */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        /* Кнопки-стрелки */
+        .arrow-button {
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #007bff;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+        }
+        
+        .arrow-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,123,255,0.4);
+        }
+        
+        .arrow-button:active {
+            transform: scale(0.95);
+        }
+        
+        /* Стрелка внутри кнопки */
+        .arrow-button::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid white;
+            border-bottom: none;
+            border-right: none;
+        }
+        
+        /* Стрелка влево */
+        .arrow-button.prev::before {
+            transform: rotate(-45deg);
+            margin-left: 5px;
+        }
+        
+        /* Стрелка вправо */
+        .arrow-button.next::before {
+            transform: rotate(135deg);
+            margin-right: 5px;
+        }
+        
+        /* Альтернативный вариант стрелок с SVG */
+        .arrow-button.svg-arrow {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .arrow-button.svg-arrow svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            transition: transform 0.2s ease;
+        }
+        
+        .arrow-button.svg-arrow:hover svg {
+            transform: scale(1.2);
+        }
+        
+        /* Стили для label внутри кнопки */
+        .arrow-button label {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        /* Индикаторы */
+        .indicators {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #dee2e6;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator:hover {
+            background: #adb5bd;
+        }
+        
+        /* Активный индикатор */
+        #slide1:checked ~ .navigation .indicator1,
+        #slide2:checked ~ .navigation .indicator2,
+        #slide3:checked ~ .navigation .indicator3,
+        #slide4:checked ~ .navigation .indicator4 {
+            background: #007bff;
+            transform: scale(1.3);
+        }
+        
+        /* Скрываем ненужные кнопки */
+        .arrow-button.hidden {
+            display: none;
+        }
+        
+        /* Логика кнопок навигации */
+        #slide1:checked ~ .navigation .prev4,
+        #slide2:checked ~ .navigation .prev1,
+        #slide3:checked ~ .navigation .prev2,
+        #slide4:checked ~ .navigation .prev3,
+        
+        #slide1:checked ~ .navigation .next2,
+        #slide2:checked ~ .navigation .next3,
+        #slide3:checked ~ .navigation .next4,
+        #slide4:checked ~ .navigation .next1 {
+            display: flex;
+        }
+        
+        /* Группы кнопок */
+        .button-group {
+            display: flex;
+            gap: 20px;
+        }
+        
+        /* Дополнительные стили для разных вариантов стрелок */
+        .arrow-button.variant-2 {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+        }
+        
+        .arrow-button.variant-3 {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+        }
+        
+        .arrow-button.variant-4 {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+        }
+        
+        .arrow-button.variant-4::before {
+            border-color: #2d3436;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <!-- Радио-кнопки для управления слайдами -->
+        <input type="radio" name="slider" id="slide1" class="slide-radio" checked>
+        <input type="radio" name="slider" id="slide2" class="slide-radio">
+        <input type="radio" name="slider" id="slide3" class="slide-radio">
+        <input type="radio" name="slider" id="slide4" class="slide-radio">
+        
+        <!-- Слайды -->
+        <div class="slider">
+            <!-- Слайд 1 -->
+            <div class="slide slide1">
+                <div class="slide-header">
+                    <h2 class="slide-title">Горные пейзажи</h2>
+                    <p class="slide-description">Величественные горные хребты, покрытые снежными шапками, создают неповторимую атмосферу спокойствия и гармонии с природой. Идеальное место для медитации и воссоединения с природой.</p>
+                </div>
+                <div class="images-container">
+                    <div class="image-box">
+                        <img src="https://picsum.photos/350/250?random=11&gravity=north" class="slide-image" alt="Горный пейзаж 1">
+                    </div>
+                    <div class="image-box">
+                        <img src="https://picsum.photos/350/250?random=12&gravity=north" class="slide-image" alt="Горный пейзаж 2">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Слайд 2 -->
+            <div class="slide slide2">
+                <div class="slide-header">
+                    <h2 class="slide-title">Морские просторы</h2>
+                    <p class="slide-description">Бескрайние морские горизонты и кристально чистая вода дарят ощущение свободы и единения с океаном. Шум волн и свежий бриз наполняют энергией и спокойствием.</p>
+                </div>
+                <div class="images-container">
+                    <div class="image-box">
+                        <img src="https://picsum.photos/350/250?random=21&gravity=north" class="slide-image" alt="Морской пейзаж 1">
+                    </div>
+                    <div class="image-box">
+                        <img src="https://picsum.photos/350/250?random=22&gravity=north" class="slide-image" alt="Морской пейзаж 2">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Слайд 3 -->
+            <div class="slide slide3">
+                <div class="slide-header">
+                    <h2 class="slide-title">Лесные тропы</h2>
+                    <p class="slide-description">Тайны древних лесов, где каждый шаг открывает новые чудеса природы и дарит умиротворение. Пение птиц и шелест листьев создают природную симфонию.</p>
+                </div>
+                <div class="images-container">
+                    <div class="image-box">
+                        <img src="https://picsum.photos/350/250?random=31&gravity=north" class="slide-image" alt="Лесной пейзаж 1">
+                    </div>
+                    <div class="image-box">
+                        <img src="https://picsum.photos/350/250?random=32&gravity=north" class="slide-image" alt="Лесной пейзаж 2">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Слайд 4 -->
+            <div class="slide slide4">
+                <div class="slide-header">
+                    <h2 class="slide-title">Городские огни</h2>
+                    <p class="slide-description">Яркие огни мегаполиса, ритм современной жизни и архитектурные шедевры, создающие уникальную атмосферу прогресса и возможностей.</p>
+                </div>
+                <div class="images-container">
+                    <div class="image-box">
+                        <img src="https://picsum.photos/350/250?random=41&gravity=north" class="slide-image" alt="Городской пейзаж 1">
+                    </div>
+                    <div class="image-box">
+                        <img src="https://picsum.photos/350/250?random=42&gravity=north" class="slide-image" alt="Городской пейзаж 2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Навигация -->
+        <div class="navigation">
+            <!-- Группа кнопок "Назад" -->
+            <div class="button-group">
+                <button class="arrow-button prev prev4 hidden variant-2">
+                    <label for="slide4"></label>
+                </button>
+                <button class="arrow-button prev prev1 hidden variant-2">
+                    <label for="slide1"></label>
+                </button>
+                <button class="arrow-button prev prev2 hidden variant-2">
+                    <label for="slide2"></label>
+                </button>
+                <button class="arrow-button prev prev3 hidden variant-2">
+                    <label for="slide3"></label>
+                </button>
+            </div>
+            
+            <!-- Индикаторы -->
+            <div class="indicators">
+                <label for="slide1" class="indicator indicator1"></label>
+                <label for="slide2" class="indicator indicator2"></label>
+                <label for="slide3" class="indicator indicator3"></label>
+                <label for="slide4" class="indicator indicator4"></label>
+            </div>
+            
+            <!-- Группа кнопок "Вперед" -->
+            <div class="button-group">
+                <button class="arrow-button next next2 hidden variant-3">
+                    <label for="slide2"></label>
+                </button>
+                <button class="arrow-button next next3 hidden variant-3">
+                    <label for="slide3"></label>
+                </button>
+                <button class="arrow-button next next4 hidden variant-3">
+                    <label for="slide4"></label>
+                </button>
+                <button class="arrow-button next next1 hidden variant-3">
+                    <label for="slide1"></label>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
