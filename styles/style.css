@@ -209,7 +209,30 @@ ol {
 .info__roads-img {
   padding-left: 120px;
   padding-top: 80px;
+  overflow: hidden;
+  position: relative;
 }
+
+.info__roads-slider {
+  display: none;
+}
+
+ /* Активный слайд */
+#slide1:checked ~ .slider .slide1,
+#slide2:checked ~ .slider .slide2,
+#slide3:checked ~ .slider .slide3,
+#slide4:checked ~ .slider .slide4 {
+  display: block;
+}
+
+
+/*
+.info__roads-img:hover {
+  transform: translateY(-5px);
+}
+*/
+
+
 
 .info__roads-buttons {
   padding-left: 120px;
