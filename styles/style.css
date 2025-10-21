@@ -361,7 +361,7 @@ ol {
 
 .info__bikes-bikes_iteam {
   border-radius: 20px;
-  box-shadow: -20px 60px 220px 0px rgba(0, 0, 0, 0.44);
+  box-shadow: -20px 10px 19px 0px rgba(0, 0, 0, 0.44);
   background: rgba(244, 244, 244, 1);
   width: 380px;
   height: 380px;
@@ -369,29 +369,25 @@ ol {
 
 .info__bikes-bikes_iteam-img {
   border-radius: 20px;
-  width: 340px;
-  height: 340px;
   padding: 20px;
 }
 
 .info__bikes-bikes_iteam-link-text {
-  padding-top: 20px;
-  padding-bottom: 60px;
+  padding-top: 22px;
+  padding-left: 6px;
 }
 
-
-
-
-
-
-
-.info__bikes-bikes_iteam-text {
+.info__bikes-bikes_iteam-link {
   color: rgba(21, 21, 21, 1);
   font-size: 18px;
   font-weight: 600;
   line-height: 22px;
   text-align: left;
-  padding-top: 50px;
+  
+  text-decoration: none;
+}
+.info__bikes-bikes_iteam-text {
+
 }
 
 .info__workout-img {
