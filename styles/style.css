@@ -102,7 +102,42 @@ ol {
   background-color: rgba(36, 180, 126, 1);
   color: #fff;
   border: none;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 14px; 
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 1;
 }
+/*Анимация для кнопки*/
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(49, 158, 117, 1);
+  transition: left 0.8s ease;
+  z-index: -1;
+}
+
+.button:hover::before {
+  left: 0;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
 
 .about__text-down {
   display: inline-block;
@@ -217,24 +252,73 @@ ol {
   display: none;
 }
 
+ /* Активный индикатор */
+#slide1:checked ~ .info__roads-buttons .indicator1,
+#slide2:checked ~ .info__roads-buttons .indicator2,
+#slide3:checked ~ .info__roads-buttons .indicator3
+{
+  background: #007bff;
+  transform: scale(1.3);
+}
+
  /* Активный слайд */
 #slide1:checked ~ .slider .slide1,
 #slide2:checked ~ .slider .slide2,
-#slide3:checked ~ .slider .slide3,
-#slide4:checked ~ .slider .slide4 {
+#slide3:checked ~ .slider .slide3
+{
   display: block;
 }
 
-
-/*
-.info__roads-img:hover {
-  transform: translateY(-5px);
-}
-*/
-
-.nav-button.hidden {
+/* Скрываем ненужные кнопки */
+.img-button.hidden {
   display: none;
 }
+
+/* Логика кнопок навигации */
+#slide1:checked ~ .info__roads-buttons .prev3,
+#slide2:checked ~ .info__roads-buttons .prev2,
+#slide3:checked ~ .info__roads-buttons .prev1,
+        
+       
+#slide1:checked ~ .info__roads-buttons .next2,
+#slide2:checked ~ .info__roads-buttons .next3,
+#slide3:checked ~ .info__roads-buttons .next1
+{
+  display: flex;
+}
+
+
+/*Анимация левой кнопки- Предыдущ картинка*/
+.info__roads-buttons-left:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px #666;
+}
+
+.info__roads-buttons-left:active {
+  transform: scale(0.95);
+}
+
+/*Анимация левой кнопки- След картинка*/
+.info__roads-buttons-right:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px #666;
+}
+
+.info__roads-buttons-right:active {
+  transform: scale(0.95);
+}
+
+
+
+.info__roads-slider {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
 .info__roads-buttons {
   padding-left: 120px;
@@ -390,6 +474,13 @@ ol {
   text-align: left;
   text-decoration: none;
 }
+
+.info__bikes-bikes_iteam:active {
+  box-shadow: -5px 0 #666;
+  transform: translateX(-4px);
+}
+
+
 .info__bikes-bikes_iteam-text {
 
 }

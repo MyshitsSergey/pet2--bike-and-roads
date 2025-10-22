@@ -64,14 +64,14 @@
 
 
     <section class="info__roads">
-
+        <!-- Радио-кнопки для управления слайдами -->
         <input type="radio" name="info__roads-slider_1" id="slide1" class="slide-radio" checked>
         <input type="radio" name="info__roads-slider_1" id="slide2" class="slide-radio">
         <input type="radio" name="info__roads-slider_1" id="slide3" class="slide-radio">
-        <input type="radio" name="info__roads-slider_1" id="slide4" class="slide-radio">
-
+        
+      <!-- Слайды -->
       <div class="slider">
-
+        <!-- Слайд 1 -->
         <div class="info__roads-slider slide1">
           <h2 class="info__roads-name">Шоссе</h2>
           <div class="info__roads-text">
@@ -82,7 +82,7 @@
             <img src="./images/Placeholder3.1.jpg" alt="Лесная дорога">
           </div>
         </div>
-
+        <!-- Слайд 2 -->
         <div class="info__roads-slider slide2">
           <h2 class="info__roads-name">Грэвел</h2>
           <div class="info__roads-text">
@@ -93,7 +93,7 @@
             <img src="./images/grevel_in_road.jpg" alt="Лесная дорога">
           </div>
         </div>
-
+        <!-- Слайд 3 -->
         <div class="info__roads-slider slide3">
           <h2 class="info__roads-name">ТТ</h2>
           <div class="info__roads-text">
@@ -107,35 +107,51 @@
       </div>
 
 
-
+      <!-- Навигация -->
       <div class="info__roads-buttons">
-        <div class="button-group">
-
-          <button class="nav-button info__roads-buttons-left prev4 hidden">
-            <img for="slide4" class="info__roads-buttons-left_simvol" src="./images/strelka-left.svg" alt="Стрелка в лево">
+        <!-- Группа кнопок "Назад" -->
+        <div class="button-group">         
+           <button class="img-button info__roads-buttons-left prev3 hidden">
+              <img class="info__roads-buttons-left_simvol" src="./images/strelka-left.svg" alt="Стрелка в лево">
+              <label for="slide3"></label>
           </button>
 
-           <button class="nav-button info__roads-buttons-left prev1 hidden">
-            <img for="slide4" class="info__roads-buttons-left_simvol" src="./images/strelka-left.svg" alt="Стрелка в лево">
+           <button class="img-button info__roads-buttons-left prev2 hidden">
+            <img class="info__roads-buttons-left_simvol" src="./images/strelka-left.svg" alt="Стрелка в лево">
+            <label for="slide2"></label>
           </button>
 
-           <button class="nav-button info__roads-buttons-left prev2 hidden">
-            <img for="slide2" class="info__roads-buttons-left_simvol" src="./images/strelka-left.svg" alt="Стрелка в лево">
-          </button>
+           <button class="img-button info__roads-buttons-left prev1 hidden">
+            <img class="info__roads-buttons-left_simvol" src="./images/strelka-left.svg" alt="Стрелка в лево">
+            <label for="slide1"></label>
+           </button>
+        </div>
 
-           <button class="nav-button info__roads-buttons-left prev3 hidden">
-            <img for="slide3" class="info__roads-buttons-left_simvol" src="./images/strelka-left.svg" alt="Стрелка в лево">
-          </button>
-
-
+        <!-- Индикаторы -->
+        <div class="indicators">
+                <label for="slide1" class="indicator indicator1"></label>
+                <label for="slide2" class="indicator indicator2"></label>
+                <label for="slide3" class="indicator indicator3"></label>
         </div>
 
 
+            <!-- Группа кнопок "Вперед" -->
+        <div class="button-group">
+          <button class="img-button info__roads-buttons-right next next2 hidden">
+            <img class="info__roads-buttons-left_simvol" src="./images/strelka-right.svg" alt="Стрелка в право">
+            <label for="slide2"></label>
+          </button>
 
-        <button class="info__roads-buttons-right">
-          <img class="info__roads-buttons-left_simvol" src="./images/strelka-right.svg" alt="Стрелка в лево">
-        </button>
+            <button class="img-button info__roads-buttons-right next next3 hidden">
+              <img class="info__roads-buttons-left_simvol" src="./images/strelka-right.svg" alt="Стрелка в право">
+              <label for="slide3"></label>
+            </button>
 
+            <button class="img-button info__roads-buttons-right next next1 hidden">
+              <img class="info__roads-buttons-left_simvol" src="./images/strelka-right.svg" alt="Стрелка в право">
+              <label for="slide1"></label>
+          </button>
+        </div>
       </div>
 
     </section>
