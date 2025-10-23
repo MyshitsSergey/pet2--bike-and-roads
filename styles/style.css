@@ -53,6 +53,7 @@ ol {
 }
 
 .header-link {
+  color: rgba(21, 21, 21, 1);
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
@@ -401,6 +402,7 @@ ol {
 #tt:checked ~ .info__bikes-roads_menu label[for="tt"] {
   color: black;
   font-weight: 600;
+  opacity: 1;
 }
 
 /* Галереи изначально скрыты */
@@ -434,12 +436,6 @@ ol {
   text-shadow: 0 6px 20px #666;
   background: transparent;
 }
-
-.bike-tab:focus {
-  color: black;
-  font-weight: 600;
-}
-
 
 
 /*Секция - Про тренировки*/
@@ -479,16 +475,29 @@ ol {
 }
 
 .info__workout-menu_iteam {
-  color: rgba(21, 21, 21, 1);
+}
+
+.info__workout-menu_iteam-links {
+  color: rgba(34, 34, 34, 1);
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   text-align: left;
-}
-
-.info__workout-menu_iteam-links {
+  opacity: 0.7;
   text-decoration: none;
 }
+
+.liks__style:hover{
+  color: rgba(21, 21, 21, 1);
+  opacity: 1;
+  text-shadow: 0 6px 20px #666;
+}
+
+.liks__style:active {
+  transform: scale(0.95);
+}
+
+
 
 .info__bikes-bikes_iteam {
   border-radius: 20px;
