@@ -158,53 +158,136 @@
 
 
 
-
+    <!-- Секция Информация по разным Велосипедам -->
     <section class="info__bikes">
+      <!-- Радиокнопки для переключения -->
+        <input type="radio" name="bike-type" id="shosse" class="bike-radio" checked>
+        <input type="radio" name="bike-type" id="gravel" class="bike-radio">
+        <input type="radio" name="bike-type" id="tt" class="bike-radio">
+
+
       <h2 class="info__bikes-name">Велосипеды</h2>
+
+
       <ul class="info__bikes-roads_menu">
         <li class="info__bikes-roads_iteam">
-          <a class="info__bikes-roads_iteam-links" href="">Шоссе</a>
+          <label for="shosse" class="bike-tab">Шоссе</label>
+            <!--<a class="info__bikes-roads_iteam-links" href="">Шоссе</a>-->
         </li>
+
         <li class="info__bikes-roads_iteam">
-          <a class="info__bikes-roads_iteam-links" href="">Гравел</a>
+          <label for="gravel" class="bike-tab">Гравел</label>
+           <!--<a class="info__bikes-roads_iteam-links" href="">Гравел</a>-->
         </li>
+
         <li class="info__bikes-roads_iteam">
-          <a class="info__bikes-roads_iteam-links" href="">ТТ</a>
+          <label for="tt" class="bike-tab">ТТ</label>
+          <!--<a class="info__bikes-roads_iteam-links" href="">ТТ</a>-->
         </li>
       </ul>
-      <ul class="info__bikes-bikes">
+
+
+
+      <ul class="info__bikes-bikes" data-bike="shosse">
         <li class="info__bikes-bikes_iteam">
           <div class="info__bikes-bikes_iteam-link-img">
-            <a class="info__bikes-bikes_iteam-link" href="">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN" target="_blank">
              <img class="info__bikes-bikes_iteam-img" src="./images/Снимок экрана 2021-05-24 в 12.58 (1).png" alt="">
             </a>
           </div>
           <div class="info__bikes-bikes_iteam-link-text">
-            <a class="info__bikes-bikes_iteam-link" href="">Cervelo Caledonia-5</a>
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN">Cervelo Caledonia-5</a>
           </div>          
         </li>
         <li class="info__bikes-bikes_iteam">
           <div class="info__bikes-bikes_iteam-link-img">
-            <a class="info__bikes-bikes_iteam-link" href="">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J" target="_blank">
               <img class="info__bikes-bikes_iteam-img" src="./images/Снимок экрана 2021-05-24 в 12.58.png" alt="">
             </a>
           </div>
           <div class="info__bikes-bikes_iteam-link-text">
-            <a class="info__bikes-bikes_iteam-link" href="">Cannondale Systemsix Himod</a>
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J" target="_blank">Cannondale Systemsix Himod</a>
           </div> 
           
         </li>
         <li class="info__bikes-bikes_iteam">
           <div class="info__bikes-bikes_iteam-link-img">
-            <a class="info__bikes-bikes_iteam-link" href="">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF" target="_blank">
               <img class="info__bikes-bikes_iteam-img" src="./images/Снимок экрана 2021-05-24 в 12.59.png" alt="">
             </a>
           </div>
           <div class="info__bikes-bikes_iteam-link-text">
-            <a class="info__bikes-bikes_iteam-link" href="">Trek Domane SL-7</a>
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF" target="_blank">Trek Domane SL-7</a>
           </div> 
         </li>
       </ul>
+
+      <ul class="info__bikes-bikes" data-bike="gravel">
+        <li class="info__bikes-bikes_iteam">
+          <div class="info__bikes-bikes_iteam-link-img">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE" target="_blank">
+             <img class="info__bikes-bikes_iteam-img" src="./images/gravell_1.png" alt="">
+            </a>
+          </div>
+          <div class="info__bikes-bikes_iteam-link-text">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE" target="_blank">Cervelo Aspero GRX 810</a>
+          </div>          
+        </li>
+        <li class="info__bikes-bikes_iteam">
+          <div class="info__bikes-bikes_iteam-link-img">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9" target="_blank">
+              <img class="info__bikes-bikes_iteam-img" src="./images/gravell_2.png" alt="">
+            </a>
+          </div>
+          <div class="info__bikes-bikes_iteam-link-text">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9" target="_blank">Specialized S-Works Diverge</a>
+          </div> 
+        </li>
+        <li class="info__bikes-bikes_iteam">
+          <div class="info__bikes-bikes_iteam-link-img">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8" target="_blank">
+              <img class="info__bikes-bikes_iteam-img" src="./images/gravell_3.png" alt="">
+            </a>
+          </div>
+          <div class="info__bikes-bikes_iteam-link-text">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8" target="_blank">Cannondale Topstone Lefty 3</a>
+          </div>  
+        </li>
+      </ul>
+
+            <ul class="info__bikes-bikes" data-bike="tt">
+        <li class="info__bikes-bikes_iteam">
+          <div class="info__bikes-bikes_iteam-link-img">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9" target="_blank">
+             <img class="info__bikes-bikes_iteam-img" src="./images/TT_1.png" alt="">
+            </a>
+          </div>
+          <div class="info__bikes-bikes_iteam-link-text">
+            <a class="info__bikes-bikes_iteam-link" href="#">Specialized S-Works Shiv</a>
+          </div>          
+        </li>
+        <li class="info__bikes-bikes_iteam">
+          <div class="info__bikes-bikes_iteam-link-img">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835" target="_blank">
+              <img class="info__bikes-bikes_iteam-img" src="./images/TT_2.png" alt="">
+            </a>
+          </div>
+          <div class="info__bikes-bikes_iteam-link-text">
+            <a class="info__bikes-bikes_iteam-link" href="">BMC Timemachine 01 ONE</a>
+          </div> 
+        </li>
+        <li class="info__bikes-bikes_iteam">
+          <div class="info__bikes-bikes_iteam-link-img">
+            <a class="info__bikes-bikes_iteam-link" href="https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q" target="_blank">
+              <img class="info__bikes-bikes_iteam-img" src="./images/TT_3.png" alt="">
+            </a>
+          </div>
+          <div class="info__bikes-bikes_iteam-link-text">
+            <a class="info__bikes-bikes_iteam-link" href="">Cervelo P-Series</a>
+          </div>  
+        </li>
+      </ul>
+
     </section>
 
 

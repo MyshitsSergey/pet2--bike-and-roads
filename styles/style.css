@@ -359,9 +359,10 @@ ol {
   height: 16px;
 }
 
-
+/*Секция Информация по разным Велосипедам*/
 .info__bikes {
   display: grid;
+  height: 724px;
 }
 
 .info__bikes-name {
@@ -379,15 +380,6 @@ ol {
   display: flex;
   gap: 40px;
   padding-left: 1080px;
-  color: rgba(21, 21, 21, 1);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  text-align: right;
-}
-
-.info__bikes-roads_iteam-links {
-  text-decoration: none;
 }
 
 .info__bikes-bikes {
@@ -398,9 +390,59 @@ ol {
   padding-right: 120px;
   grid-template-columns: 1fr 1fr 1fr;
 }
+ /* Скрываем радиокнопки */
+.bike-radio {
+  display: none;
+}
+
+/* Стили для активной вкладки через радиокнопки */
+#shosse:checked ~ .info__bikes-roads_menu label[for="shosse"],
+#gravel:checked ~ .info__bikes-roads_menu label[for="gravel"], 
+#tt:checked ~ .info__bikes-roads_menu label[for="tt"] {
+  color: black;
+  font-weight: 600;
+}
+
+/* Галереи изначально скрыты */
+.info__bikes-bikes {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+ /* Показываем соответствующую галерею при выборе радиокнопки */
+#shosse:checked ~ .info__bikes-bikes[data-bike="shosse"],
+#gravel:checked ~ .info__bikes-bikes[data-bike="gravel"],
+#tt:checked ~ .info__bikes-bikes[data-bike="tt"] {
+  display: flex;
+}
+
+.bike-tab {
+  cursor: pointer;
+  color: rgba(34, 34, 34, 1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.bike-tab:hover {
+  color: black;
+  font-weight: 600;
+  transform: translateX(-12px);
+  transform: scale(1.1);
+  text-shadow: 0 6px 20px #666;
+  background: transparent;
+}
+
+.bike-tab:focus {
+  color: black;
+  font-weight: 600;
+}
 
 
 
+/*Секция - Про тренировки*/
 .info__workout {
   display: flex;
 }
@@ -464,6 +506,7 @@ ol {
 .info__bikes-bikes_iteam-link-text {
   padding-top: 22px;
   padding-left: 6px;
+  cursor: pointer;
 }
 
 .info__bikes-bikes_iteam-link {
